@@ -7,6 +7,36 @@
         mc:Ignorable="d"
         Title="MainWindow" Height="450" Width="800">
     <Grid>
-        
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="1*"/>
+        </Grid.ColumnDefinitions>
+
+        <Grid.RowDefinitions>
+            <RowDefinition Height="auto"/>
+            <RowDefinition Height="1*"/>
+        </Grid.RowDefinitions>
+
+        <Menu>
+            <MenuItem Header="_Albumy">
+                <MenuItem Header="Dodaj Album" x:Name="addAlbumBT" Click="addAlbumBT_Click"  />
+                <MenuItem Header="Usuń Album" x:Name="DeleteAlbumBT" Click="DeleteAlbumBT_Click"  />
+            </MenuItem>
+
+            <MenuItem Header="_Artysci">
+                <MenuItem Header="Dodaj Artyste" x:Name="addArtistBT" Click="addArtistBT_Click"  />
+            </MenuItem>
+
+        </Menu>
+
+        <DataGrid x:Name="DataGridAlbumy" Grid.Row="1" >
+            <DataGrid.Columns>
+                <DataGridTextColumn Header="Id" Binding="{Binding Id}"/>
+                <DataGridTextColumn Header="Nazwa" Binding="{Binding Nazwa}"/>
+                <DataGridTextColumn Header="Gatunek" Binding="{Binding Gatunek}"/>
+                <DataGridTextColumn Header="Rok" Binding="{Binding Year}"/>
+                <DataGridTextColumn Header="Artyści" Binding="{Binding Artists}"/>
+                
+            </DataGrid.Columns>
+        </DataGrid>
     </Grid>
 </Window>
